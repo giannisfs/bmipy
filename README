@@ -1,0 +1,32 @@
+pyBMI is an extremely tiny library that prints the Body mass index of a person 
+it uses the S.I. (system international ) metrics kg and cm (or meters)
+but if your really want in other metrics your are free to change it
+
+
+giving a how tall (in cm or meters ) and how heavy (in kg ) someone is 
+it tells  what classification he/she belongs 
+it also tells how much kilos somebody should loose to be Normal (if he/she is fat )
+It currently follows the rules according to 
+http://apps.who.int/bmi/index.jsp?introPage=intro_3.html
+
+The reason i made this is... 
+because 
+I was annoyed by the fact that i couldn't find any BMI programm online
+that tells you automatically how much killos to loose in order to become normal,
+most tools give you only your BMI as a number ... and then you 
+have to solve each time these little equations 
+
+Minimum kilos to loose to be normal (Normal range):
+
+	Maximum = YOURKILOS - (YOURKILOS * 24.99) / BMI
+
+Maximum kilos to loose to be Normal (Best fitness,slim):
+
+	Minimum = YOURKILOS - (YOURKILOS * 18.55) / BMI
+
+
+TODO 
+Percent Body Fat
+Waist-to-Height Ratio
+Waist-to-Height Ratio
+Calories per day
