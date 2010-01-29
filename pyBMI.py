@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*-coding: utf-8 -*-
 
-# 2010 Gianis Fysakis
+# 2010 Giannis Fysakis
 # E-mail: giannisfs@gmail.com
 # Released subject to the GPL 3 License
 
