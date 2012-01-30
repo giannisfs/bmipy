@@ -12,23 +12,21 @@ http://apps.who.int/bmi/index.jsp?introPage=intro_3.html
 The reason i made this is... 
 because 
 I was annoyed by the fact that i couldn't find any BMI programm online
-that tells you automatically how much killos to loose in order to become normal,
-most tools give you only your BMI as a number ... and then you 
-have to solve each time these tiny equations 
-ofcourse the reason that people is fat is not that they are lazy doing these little math
-but because of other known reasons.... :-)
+that suggests an amount of weight to loose.
+
+The formulas are the following:
 
 Minimum kilos to loose to be normal (Normal range):
 
-	Maximum = YOURKILOS - (YOURKILOS * 24.99) / YOURS BMI
+	Maximum = YOURWEIGHT- (YOURWEIGHT * 24.99) / YOURS BMI
 
 Maximum kilos to loose to be Normal (Best fitness,slim):
 
-	Minimum = YOURKILOS - (YOURKILOS * 18.55) / YOURS BMI
+	Minimum = YOURWEIGHT - (YOURWEIGHT * 18.55) / YOURS BMI
 
 
 TODO 
-Percent Body Fat
+Percent Body Fat 
 Waist-to-Height Ratio
 Waist-to-Height Ratio
 Calories per day
