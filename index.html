@@ -46,7 +46,23 @@
       <span class="small">by <a href="https://github.com/giannisfs">giannisfs</a></span></h1>
 
     <div class="description">
-      Body mass index calculator and diet suggester
+      Body mass index calculator and diet suggester library
+      </br>
+      BodyMassIndexOf calculates the BMI (body mass index )
+according to "http://apps.who.int/bmi/index.jsp?introPage=intro_3.html"
+also finds how many kg someone needs to loose to become fit (Normal)
+Example:
+>>> George = BodyMassIndexOf(100,180,"George")
+>>> print George.bmi()
+30.864
+>>> George.evaluateBMI()
+'George Belongs to Obese Class Specifically to Class II Considered in the lowest range of Obese Class II cut-off points'
+>>> George.LoseToBeNormal()
+{'Best': '40.06', 'Normal': '19.03'}
+.........................................................................................
+So George needs too loose at least 19 kg to become Normal
+.........................................................................................
+
     </div>
 
     
@@ -55,12 +71,12 @@
 
     
       <h2>Dependencies</h2>
-      <p>a working Python installation</p>
+      <p>Just a working Python installation</p>
     
 
     
       <h2>Install</h2>
-      <p>execute script </p>
+      <p>import the script </p>
     
 
     
@@ -70,12 +86,15 @@
 
     
       <h2>Authors</h2>
-      <p>Γιάννης φυσάκης (giannifs@gmail.com)<br/>Γιάννης (giannisfs@gmail.com)<br/>      </p>
+      <p>Γιάννης φυσάκης (giannifs@gmail.com)
+<br/>Γιάννης (giannisfs@gmail.com)
+<br/>      </p>
     
 
     
       <h2>Contact</h2>
-      <p>Γιάννης (giannisfs@gmail.com)<br/>      </p>
+      <p>Γιάννης (giannisfs@gmail.com)
+<br/>      </p>
     
 
     <h2>Download</h2>
