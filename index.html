@@ -49,10 +49,11 @@
       <p>Body mass index calculator and diet suggester library</p>
       
       <p>BodyMassIndexOf calculates the BMI (body mass index )
-according to "http://apps.who.int/bmi/index.jsp?introPage=intro_3.html"
+according to "<a href="http://apps.who.int/bmi/index.jsp?introPage=intro_3.html"  target="_blank"> http://apps.who.int/bmi/index.jsp?introPage=intro_3.html</a>
 also finds how many kg someone needs to loose to become fit (Normal)</p>
 <b>Example:</b> </br>
-<pre>>>> George = BodyMassIndexOf(100,180,"George")
+<pre>>>> from pyBMI import *
+>>> George = BodyMassIndexOf(100,180,"George")
 >>> print George.bmi()
 30.864
 >>> George.evaluateBMI()
