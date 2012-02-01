@@ -49,23 +49,31 @@
     <div class="description">
       <p>Body mass index calculator and diet suggester library</p>
       
-      <p>BodyMassIndexOf calculates the BMI (body mass index )
-according to <a href="http://apps.who.int/bmi/index.jsp?introPage=intro_3.html"  target="_blank"> http://apps.who.int/bmi/index.jsp?introPage=intro_3.html</a>
-prints out verbose text about within which classes someone belongs to ,and finds how many kg someone needs to loose to become fit (Normal).</p>
+      <p>
+      pyBMI is very small library that prints the Body mass index of a person
+it uses the S.I. (system international ) metrics kg and cm (or meters)
+if your really want something in other metrics your are free to change it
+for your needs.
+
+
+giving a how tall (in cm or meters ) and how heavy (in kg ) someone is
+it tells what classification he/she belongs
+it also tells how much kg somebody should lose to be Normal (if he/she is fat )
+It currently follows the rules according to <a href="http://apps.who.int/bmi/index.jsp?introPage=intro_3.html"  target="_blank"> http://apps.who.int/bmi/index.jsp?introPage=intro_3.html</a>
+</p>
 <b>Example:</b> </br>
-<pre>>>>#Suppose George weights 100 kilos and he is 180 cm tall
->>> from pyBMI import *
->>> George = BodyMassIndexOf(100,180,"George")
->>> print George.bmi()
-30.864
+<pre>>>> George = BodyMassIndexOf(100,180,"George")
+>>> George.bmi()
+'30.86'
 >>> George.evaluateBMI()
-'George Belongs to Obese Class Specifically to Class II Considered in the 
-lowest range of Obese Class II cut-off points'
->>> George.LoseToBeNormal()
-{'Best': '40.06', 'Normal': '19.03'}
-.........................................................
-So George needs too loose at least 19 kg to become Normal
-.........................................................
+'George Belongs to Obese Class Specifically to Class I Considered in the lowest range of Obese Class I cut-off points'
+>>> George.LoseWeight()
+{'Minimum': '19.02', 'Maximum': '40.05', 'Mean': '27.93'}
+>>> George.willWeighAfterDiet()
+{'Afer a Maximum diet ': '59.95', 'Afer a Minimum diet ': '80.98', 'Afer a Mean diet ': '72.07'}
+.........................................................................................
+So George have to lose 19 kg to enter the Normal range (with bmi 24.99)
+.........................................................................................
 </pre>
 
     </div>
