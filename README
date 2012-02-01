@@ -5,24 +5,11 @@ but if your really want in other metrics your are free to change it
 
 giving a how tall (in cm or meters ) and how heavy (in kg ) someone is 
 it tells  what classification he/she belongs 
-it also tells how much kilos somebody should loose to be Normal (if he/she is fat )
+it also tells how much kg somebody should lose to be Normal (if he/she is fat )
 It currently follows the rules according to 
 http://apps.who.int/bmi/index.jsp?introPage=intro_3.html
 
-The reason i made this is... 
-because 
-I was annoyed by the fact that i couldn't find any BMI programm online
-that suggests an amount of weight to loose.
 
-The formulas are the following:
-
-Minimum kilos to loose to be normal (Normal range):
-
-	Minimum = YOURWEIGHT- (YOURWEIGHT * 24.99) / YOURS BMI
-
-Maximum kilos to loose to be Normal (Best fitness,slim):
-
-	Maximum = YOURWEIGHT - (YOURWEIGHT * 18.55) / YOURS BMI
 
 
 TODO 
