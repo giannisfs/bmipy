@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-#-*-coding: utf-8 -*-
 
 #    2010 Giannis Fysakis
 #    E-mail: giannisfs@gmail.com
@@ -19,34 +18,39 @@
 
 """
     BodyMassIndexOf calculates the BMI (body mass index )
-    according to "http://apps.who.int/bmi/index.jsp?introPage=intro_3.html"
-    also finds how many kg someone needs to loose to become fit (Normal)
+    according to http://apps.who.int/bmi/index.jsp?introPage=intro_3.html .
+    Prints out within which classes someone belongs to ,and finds how many kg
+    someone needs to lose to become fit (Normal).
     Example:
-                >>> George = BodyMassIndexOf(100,180,"George")
-                >>> print George.bmi()
-                        30.864
-                >>> George.evaluateBMI()
-                        'George Belongs to Obese Class Specifically to Class II Considered in the lowest range of Obese Class II cut-off points'
-                >>> George.LoseToBeNormal()
-                        {'Best': '40.06', 'Normal': '19.03'}
+        >>> George = BodyMassIndexOf(100,180,"George")
+        >>> George.bmi()
+        '30.86'
+        >>> George.evaluateBMI()
+        'George Belongs to Obese Class Specifically to Class I Considered in the lowest range of Obese Class I cut-off points'
+        >>> George.LoseWeight()
+        {'Minimum': '19.02', 'Maximum': '40.05', 'Mean': '27.93'}
+        >>> George.willWeighAfterDiet()
+        {'Afer a Maximum diet ': '59.95', 'Afer a Minimum diet ': '80.98', 'Afer a Mean diet ': '72.07'}
+        
     .........................................................................................
-    So George needs too loose at least 19 kg to become Normal
+    So George have to lose 19 kg to enter the Normal range (with bmi 24.99)
     .........................................................................................
 """
+
 import sys
 
 class BodyMassIndexOf():
     #BMI Classification
     _BMICLFN= {"UnderWeight": "%.3f <18.50" ,\
                   "SevereThin": "%.3f <16.00",\
-                  "ModThin": "16.00 >= %.3f <= 16.99" ,\
-                  "MildThin": "17.00 >= %.3f <= 18.49",\
-                  "NormalRange": "18.50 >= %.3f <= 24.99",\
-                  "OverWeight": "25.00 >= %3.f <=29.99",\
-                  "PreObese": "25.00 >= %.3f <= 29.99",\
+                  "ModThin": "16.00 <= %.3f <= 16.99" ,\
+                  "MildThin": "17.00 <= %.3f <= 18.49",\
+                  "NormalRange": "18.50 <= %.3f <= 24.99",\
+                  "OverWeight": "25.00 <= %3.f <=29.99",\
+                  "PreObese": "25.00 <= %.3f <= 29.99",\
                   "Obese": " %.3f >= 30.00" ,\
-                  "ObeseClassI":"30.00 >= %.3f <= 34.99",\
-                  "ObeseClassII":"35.00 >= %.3f <= 39.99",\
+                  "ObeseClassI":"30.00 <= %.3f <= 34.99",\
+                  "ObeseClassII":"35.00 <= %.3f <= 39.99",\
                   "ObeseClassIII":"%.3f >= 40.00"
                   }
     
@@ -78,9 +82,9 @@ class BodyMassIndexOf():
         H = self.height
         #To distinguish cm from meters one possible way is...
         if str(H).find('.') == 1 or len(str(H)) == 1:
-            return  "%.3f" % (M / H ** 2)
+            return  "%.2f" % (M / H ** 2)
         elif str(H).find('.') > 1 or len(str(H)) > 2:
-            return  "%.3f" % (M / (H / 100.0) ** 2)
+            return  "%.2f" % (M / (H / 100.0) ** 2)
     def evaluateBMI(self):
         TheBmi="%s " %(self.name)
         
@@ -89,24 +93,23 @@ class BodyMassIndexOf():
         
         if eval( test["UnderWeight"] % bmi ):
             TheBmi += "Belongs to Underweight Class "
-            #return "%s are Underweight " % self.name
         if eval( test["SevereThin"] % bmi ):
-            TheBmi +="Specifically has Severe Thinness "
+            TheBmi +="has Severe Thinness "
         if eval( test["ModThin"] % bmi ):
-            TheBmi +="Specifically has Moderate Thinness "
+            TheBmi +="has Moderate Thinness "
         if eval( test["MildThin"] % bmi ):
-            TheBmi +="Specifically has Mild  Thinness "
+            TheBmi +="has Mild  Thinness "
         if eval( test["NormalRange"] % bmi ):
             TheBmi += "Belongs to NormalRange Class "
-            if 18.50 >=  bmi <= 22.99 :
-                TheBmi += "with the less risk"
+            if 18.50 <=  bmi <= 22.99 :
+                TheBmi += "with the least risk"
             else:
-                TheBmi += "but with a tiny risk"
+                TheBmi += "with a very small risk"
         if eval( test["OverWeight"] % bmi ):
             TheBmi += "Belongs to Overweight Class "
         if eval( test["PreObese"] % bmi ):
             TheBmi +="Specifically in Pre-obese Class "
-            if 25.00 >= bmi <= 27.49:
+            if 25.00 <= bmi <= 27.49:
                 TheBmi +="Considered in the lowest range of Pre-obese cut-off points"
             else:
                 TheBmi +="Considered in the highest range of Pre-obese cut-off points"
@@ -114,13 +117,13 @@ class BodyMassIndexOf():
             TheBmi += "Belongs to Obese Class "
         if eval( test["ObeseClassI"] % bmi ):
             TheBmi +="Specifically to Class I "
-            if 30.00 >= bmi <= 32.49 :
+            if 30.00 <= bmi <= 32.49 :
                 TheBmi += "Considered in the lowest range of Obese Class I cut-off points"
             else:
                 TheBmi += "Considered in the highest range of Obese Class I cut-off points"
         if eval( test["ObeseClassII"] % bmi ):
             TheBmi +="Specifically to Class II "
-            if 35.00 >= bmi <= 37.49 :
+            if 35.00 <= bmi <= 37.49 :
                 TheBmi += "Considered in the lowest range of Obese Class II cut-off points"
             else:
                 TheBmi += "Considered in the highest range of Obese Class II cut-off points"
@@ -129,16 +132,32 @@ class BodyMassIndexOf():
         return TheBmi
 
 
-    def  LoseToBeNormal(self):
+    def  LoseWeight(self):
         bmi = float(self.bmi())
-        test = BodyMassIndexOf._BMICLFN
-        if not eval( test['NormalRange'] % bmi) and bmi >= 25.0:
-            Best = ( self.mass * 18.50) / bmi
-            Best = self.mass - Best
-            Normal = ( self.mass * 24.99) / bmi
-            Normal = self.mass - Normal
-
-        return {"Best": "%.2f" % (Best), "Normal": "%.2f" % (Normal)}
+        #test = BodyMassIndexOf._BMICLFN
+        if bmi >= 18.50 :
+            Max = ( self.mass * 18.50) / bmi
+            Max = self.mass - Max
+            if Max < 0 : Max = 0
             
+            Mean = (self.mass * 22.24) / bmi
+            Mean = self.mass - Mean
+            if Mean < 0 : Mean = 0
+            Min = ( self.mass * 24.99) / bmi
+            Min = self.mass - Min
+            if Min < 0 : Min = 0
+            
+        elif bmi < 18.50:
+            return "No need to lose weight"
+            
+        return {"Maximum": "%.2f" % (Max),"Mean":"%.2f"% (Mean) ,"Minimum":"%.2f" % (Min)}
+            
+    def willWeighAfterDiet(self):
+        dietTargets = self.LoseWeight()
+        res = {}
+        M = self.mass
+        bmi = float(self.bmi())
+        for k,v in dietTargets.iteritems():
 
-
+            res["Afer a "+ k + " diet "] = "%.2f" % ( M - float(v) )
+        return res
