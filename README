@@ -18,11 +18,11 @@ The formulas are the following:
 
 Minimum kilos to loose to be normal (Normal range):
 
-	Maximum = YOURWEIGHT- (YOURWEIGHT * 24.99) / YOURS BMI
+	Minimum = YOURWEIGHT- (YOURWEIGHT * 24.99) / YOURS BMI
 
 Maximum kilos to loose to be Normal (Best fitness,slim):
 
-	Minimum = YOURWEIGHT - (YOURWEIGHT * 18.55) / YOURS BMI
+	Maximum = YOURWEIGHT - (YOURWEIGHT * 18.55) / YOURS BMI
 
 
 TODO 
