@@ -1,7 +1,9 @@
-pyBMI is very small library that prints the Body mass index of a person 
+pyBMI (bmipy) is very small library that prints the Body mass index of a person 
 it uses the S.I. (system international ) metrics kg and cm (or meters)
 if your really want something in other metrics your are free to change it 
 for your needs.
+
+Page link https://github.com/giannisfs/bmipy
 
 
 giving a how tall (in cm or meters ) and how heavy (in kg ) someone is 
