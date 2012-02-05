@@ -3,7 +3,7 @@ it uses the S.I. (system international ) metrics kg and cm (or meters)
 if your really want something in other metrics your are free to change it 
 for your needs.
 
-Page link https://github.com/giannisfs/bmipy
+Page link http://giannisfs.github.com/bmipy/
 
 
 giving a how tall (in cm or meters ) and how heavy (in kg ) someone is 
