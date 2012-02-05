@@ -1,21 +1,3 @@
-pyBMI (bmipy) is very small library that prints the Body mass index of a person 
-it uses the S.I. (system international ) metrics kg and cm (or meters)
-if your really want something in other metrics your are free to change it 
-for your needs.
-
-Page link http://giannisfs.github.com/bmipy/
 
 
-giving a how tall (in cm or meters ) and how heavy (in kg ) someone is 
-it tells  what classification he/she belongs 
-it also tells how much kg somebody should lose to be Normal (if he/she is fat )
-It currently follows the rules according to 
-http://apps.who.int/bmi/index.jsp?introPage=intro_3.html
-
-
-
-
-TODO 
-Percent Body Fat 
-Waist-to-Height Ratio
-Calories per day
+Project Page    http://giannisfs.github.com/bmipy/
